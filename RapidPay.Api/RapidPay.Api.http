@@ -1,0 +1,44 @@
+@RapidPay.Api_HostAddress = https://localhost:7090
+
+GET {{RapidPay.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{RapidPay.Api_HostAddress}}/api/auth
+Content-Type: application/json
+
+{
+  "Username": "user",
+  "Password": "password"
+}
+
+###
+
+POST {{RapidPay.Api_HostAddress}}/api/card
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImV4cCI6MTczNzc4MTk2NCwiaXNzIjoiUmFwaWRQYXkiLCJhdWQiOiJSYXBpZFBheSJ9.uxJmoBddyl-JHB-_5wegHd_NAKdGENLdyPJX5JFzYXE
+
+{
+  "Number": "432101987654321",
+  "Balance": 500,
+  "Status": true
+}
+
+###
+
+POST {{RapidPay.Api_HostAddress}}/api/card/balance/432101987654321
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImV4cCI6MTczNzc4MTk2NCwiaXNzIjoiUmFwaWRQYXkiLCJhdWQiOiJSYXBpZFBheSJ9.uxJmoBddyl-JHB-_5wegHd_NAKdGENLdyPJX5JFzYXE
+###
+
+
+POST {{RapidPay.Api_HostAddress}}/api/card/pay
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImV4cCI6MTczNzc4MTk2NCwiaXNzIjoiUmFwaWRQYXkiLCJhdWQiOiJSYXBpZFBheSJ9.uxJmoBddyl-JHB-_5wegHd_NAKdGENLdyPJX5JFzYXE
+
+{
+  "Number": "432101987654321",
+  "Amount": 150
+}
+
+###
