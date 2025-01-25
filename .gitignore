@@ -1,0 +1,17 @@
+# Compilation files
+bin/
+obj/
+*.exe
+*.dll
+*.class
+
+# System generated files
+*.db
+*.cache
+*.log
+*.lock
+*.gz
+*.zip
+
+# Visual studio
+.vs/
